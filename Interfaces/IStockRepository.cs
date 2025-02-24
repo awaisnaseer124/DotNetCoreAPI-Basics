@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Dtos.Stocks;
+using api.Helper;
 using api.Models;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
@@ -10,7 +11,7 @@ namespace api.Interfaces
 {
     public interface IStockRepository
     {
-        public Task<List<Stock>> GetAllAsycn();
+        public Task<List<Stock>> GetAllAsycn(QueryObject queryObject);
         public Task<Stock?> GetStockByIdAsycn(int id);
         public Task <Stock> CreateStockAsycn(Stock  stockModel);
         public Task<Stock?> UpdateStockAsycn(int id,UpdateStockRequestDto stockDto);
